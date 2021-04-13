@@ -709,16 +709,6 @@ function Material.Load(Config)
 	local Overrides = Config.ColorOverrides or {}
 	local Open = true
 
-    InputService.InputBegan:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
-            if Config.Title.Enabled == true then
-                Config.Title.Enabled = false
-            elseif Config.Title.Enabled == false then
-                Config.Title.Enabled = true
-            end
-        end
-    end)
-
 	Theme = Themes[Theme]
 
 	ThisTheme = Theme
@@ -754,6 +744,19 @@ function Material.Load(Config)
 	
 	local NewInstance = Objects.new("ScreenGui")
 	NewInstance.Name = Title
+
+    InputService.InputBegan:Connect(function(Input)
+        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
+            if Title.Enabled == true then
+                print("Turned off")
+                Title.Enabled = false
+            elseif Title.Enabled == false then
+                print("Turned on")
+                Title.Enabled = true
+            end
+        end
+    end)
+
     ProtectFunctions[GetExploit()](NewInstance);
 
     getgenv().OldInstance = NewInstance;
