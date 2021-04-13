@@ -747,12 +747,12 @@ function Material.Load(Config)
 
     InputService.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
-            if Title.Enabled == true then
+            if NewInstance.Enabled == true then
                 print("Turned off")
-                Title.Enabled = false
-            elseif Title.Enabled == false then
+                NewInstance.Enabled = false
+            elseif NewInstance.Enabled == false then
                 print("Turned on")
-                Title.Enabled = true
+                NewInstance.Enabled = true
             end
         end
     end)
