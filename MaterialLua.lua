@@ -711,10 +711,10 @@ function Material.Load(Config)
 
     InputService.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
-            if Config.Title.Visible == true then
-                Config.Title.Visible = false
-            elseif Config.Title.Visible == false then
-                Config.Title.Visible = true
+            if Config.Title.Enabled == true then
+                Config.Title.Enabled = false
+            elseif Config.Title.Enabled == false then
+                Config.Title.Enabled = true
             end
         end
     end)
