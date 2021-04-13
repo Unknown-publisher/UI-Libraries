@@ -557,16 +557,6 @@ local NavBar = {
 
 local MainGUI
 
-InputService.InputBegan:Connect(function(Input)
-    if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
-        if MainGUI.Visible == true then
-           MainGUI.Visible = false
-        elseif MainGUI.Visible == false then
-               MainGUI.Visible = true
-        end
-    end
-end)
-
 function TryAddMenu(Object, Menu, ReturnTable)
 	local Menu = Menu
 	local ReturnTable = ReturnTable
@@ -718,6 +708,16 @@ function Material.Load(Config)
 	local Theme = Config.Theme or "Light"
 	local Overrides = Config.ColorOverrides or {}
 	local Open = true
+
+    InputService.InputBegan:Connect(function(Input)
+        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
+            if Config.Title.Visible == true then
+                Config.Title.Visible = false
+            elseif Config.Title.Visible == false then
+                Config.Title.Visible = true
+            end
+        end
+    end)
 
 	Theme = Themes[Theme]
 
