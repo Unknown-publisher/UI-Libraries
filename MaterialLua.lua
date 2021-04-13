@@ -557,6 +557,16 @@ local NavBar = {
 
 local MainGUI
 
+InputService.InputBegan:Connect(function(Input)
+    if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
+        if MainGUI.Visible == true then
+           MainGUI.Visible = false
+        elseif MainGUI.Visible == false then
+               MainGUI.Visible = true
+        end
+    end
+end)
+
 function TryAddMenu(Object, Menu, ReturnTable)
 	local Menu = Menu
 	local ReturnTable = ReturnTable
@@ -741,7 +751,7 @@ function Material.Load(Config)
     ProtectFunctions.Sentinel = function(GuiObject) GuiObject.Parent = CoreGuiService; end;
     ProtectFunctions.ScriptWare = function(GuiObject) GuiObject.Parent = gethui(); end;
     ProtectFunctions.Undefined = function(GuiObject) GuiObject.Parent = CoreGuiService; end;
-
+	
 	local NewInstance = Objects.new("ScreenGui")
 	NewInstance.Name = Title
     ProtectFunctions[GetExploit()](NewInstance);
