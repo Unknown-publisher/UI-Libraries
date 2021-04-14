@@ -752,11 +752,13 @@ function Material.Load(Config)
 	MainGUI = NewInstance
 
 	local time = 1
-	local frames = NewInstance:GetChildren
-	local FadeIn = TweenService:Create(frames, TweenInfo.new(time), {ImageTransparency = 1})
+	
+	for i, v in pairs(NewInstance:GetChildren()) do
+
+	local FadeIn = TweenService:Create(v, TweenInfo.new(time), {ImageTransparency = 1})
 	--
-	local FadeOut = TweenService:Create(frames, TweenInfo.new(time), {ImageTransparency = 0})
-		
+	local FadeOut = TweenService:Create(v, TweenInfo.new(time), {ImageTransparency = 0})
+	end
     InputService.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
             if NewInstance.Enabled == true then
