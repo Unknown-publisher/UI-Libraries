@@ -703,7 +703,7 @@ end
 
 function Material.Load(Config)
 	local Style = (Config.Style and math.clamp(Config.Style, 1, 3)) or 1
-	local Title = Config.Title or MarketplaceService:GetProductInfo(game.PlaceId).Name.. " - " ..game.PlaceId.. " --* HELLCOCK HUB *-- "
+	local Title = Config.Title or MarketplaceService:GetProductInfo(game.PlaceId).Name.. " -- " ..game.PlaceId.. " H2LLC0CK-SAN "
 	local SizeX = Config.SizeX or 300
 	local SizeY = Config.SizeY or 500
 	local Theme = Config.Theme or "Dark"
@@ -801,7 +801,7 @@ function Material.Load(Config)
 	TitleText.Text = Title
 	TitleText.TextColor3 = Theme.TitleBarAccent
 	TitleText.TextTransparency = 1
-	TitleText.TextStrokeTransparency = 0
+	TitleText.TextStrokeTransparency = 1
 	TitleText.Font = Enum.Font.FredokaOne
 	TitleText.Parent = TitleBar
 
