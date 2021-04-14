@@ -685,6 +685,7 @@ function CreateNewButton(ButtonConfig, Parent)
 	ButtonLabel.TextSize = 14
 	ButtonLabel.ClipsDescendants = true
 	ButtonLabel.TextTransparency = 1
+	ButtonLabel.TextStrokeTransparency = 0
 	ButtonLabel.Parent = Button
 
 	TweenService:Create(Button, TweenInfo.new(0.5), {ImageTransparency = 0}):Play()
@@ -947,6 +948,7 @@ function Material.Load(Config)
 		BannerLabel.TextWrapped = true
 		BannerLabel.Position = UDim2.fromOffset(5,0)
 		BannerLabel.TextTransparency = 1
+		BannerLabel.TextStrokeTransparency = 0
 		BannerLabel.ZIndex = 80
 		BannerLabel.Parent = Banner
 
@@ -1034,6 +1036,7 @@ function Material.Load(Config)
 				Button.Size = UDim2.fromScale(0,1) + UDim2.fromOffset(TextSize+35)
 				Button.ZIndex = 200
 				Button.TextTransparency = 1
+				Button.TextStrokeTransparency = 0
 			end
 
 			local FetchURL = "rbxassetid://"..ImageID
@@ -1074,6 +1077,7 @@ function Material.Load(Config)
 			Button.Size = UDim2.fromScale(0,1) + UDim2.fromOffset(TextSize+10)
 			Button.ZIndex = 200
 			Button.TextTransparency = 1
+			Button.TextStrokeTransparency = 0
 		end
 
 		Button.Parent = NavigationBarContent
@@ -1166,6 +1170,7 @@ function Material.Load(Config)
 			DropdownTitle.Text = DropdownText
 			DropdownTitle.TextColor3 = Theme.DropdownAccent
 			DropdownTitle.TextTransparency = 1
+			DropdownTitle.TextStrokeTransparency = 0
 			DropdownTitle.TextSize = 14
 			DropdownTitle.Parent = DropdownBar
 
@@ -1374,6 +1379,7 @@ function Material.Load(Config)
 					ChipLabel.TextSize = 12
 					ChipLabel.TextColor3 = BuildTable[Key] and Theme.ChipSetAccent or Theme.ChipSet
 					ChipLabel.TextTransparency = 1
+					ChipLabel.TextStrokeTransparency = 0
 					ChipLabel.Parent = ChipItem
 
 					TweenService:Create(ChipItem, TweenInfo.new(0.5), {ImageTransparency = 0}):Play()
@@ -1483,6 +1489,7 @@ function Material.Load(Config)
 						ChipLabel.TextSize = 12
 						ChipLabel.TextColor3 = BuildTable[Key] and Theme.ChipSetAccent or Theme.ChipSet
 						ChipLabel.TextTransparency = 1
+						ChipLabel.TextStrokeTransparency = 0
 						ChipLabel.Parent = ChipItem
 
 						TweenService:Create(ChipItem, TweenInfo.new(0.5), {ImageTransparency = 0}):Play()
@@ -1619,6 +1626,7 @@ function Material.Load(Config)
 					DataLabel.TextSize = 14
 					DataLabel.TextColor3 = Theme.DataTable
 					DataLabel.TextTransparency = 1
+					DataLabel.TextStrokeTransparency = 0
 					DataLabel.Parent = DataItem
 
 					TweenService:Create(DataItem, TweenInfo.new(0.5), {ImageTransparency = BuildTable[Key] and 0.8 or 0}):Play()
@@ -1733,7 +1741,8 @@ function Material.Load(Config)
 						DataLabel.Font = Enum.Font.Gotham
 						DataLabel.TextSize = 14
 						DataLabel.TextColor3 = Theme.DataTable
-						DataLabel.TextTransparency = 1
+						DataLabel.TextTransparency = 1	
+						DataLabel.TextStrokeTransparency = 0
 						DataLabel.Parent = DataItem
 
 						TweenService:Create(DataItem, TweenInfo.new(0.5), {ImageTransparency = BuildTable[Key] and 0.8 or 0}):Play()
@@ -1816,6 +1825,7 @@ function Material.Load(Config)
 			ColorLabel.TextSize = 14
 			ColorLabel.Text = ColorPickerText
 			ColorLabel.TextTransparency = 1
+			ColorLabel.TextStrokeTransparency = 0
 			ColorLabel.Parent = ColorBar
 
 			local ColorTracker = Objects.new("Round")
@@ -1861,6 +1871,7 @@ function Material.Load(Config)
 			HueLabel.TextSize = 12
 			HueLabel.Font = Enum.Font.GothamBold
 			HueLabel.TextTransparency = 1
+			HueLabel.TextStrokeTransparency = 0
 			HueLabel.Parent = Hue
 
 			local SaturationLabel = HueLabel:Clone()
@@ -2113,6 +2124,7 @@ function Material.Load(Config)
 			ToggleLabel.Text = ToggleText
 			ToggleLabel.TextColor3 = Theme.Toggle
 			ToggleLabel.TextTransparency = 1
+			ToggleLabel.TextStrokeTransparency = 0
 			ToggleLabel.ClipsDescendants = true
 			ToggleLabel.Parent = Toggle
 
@@ -2198,6 +2210,7 @@ function Material.Load(Config)
 			TextInput.Font = Enum.Font.GothamSemibold
 			TextInput.TextSize = 14
 			TextInput.TextTransparency = 1
+			TextInput.TextStrokeTransparency = 0
 			TextInput.Parent = TextField
 
 			TweenService:Create(TextField, TweenInfo.new(0.5), {ImageTransparency = 0.8}):Play()
@@ -2301,12 +2314,14 @@ function Material.Load(Config)
 			SliderTitle.Font = Enum.Font.GothamSemibold
 			SliderTitle.Size = UDim2.fromScale(1,0) + UDim2.fromOffset(-5,25)
 			SliderTitle.TextTransparency = 1
+			SliderTitle.TextStrokeTransparency = 0
 			SliderTitle.Parent = Slider
 
 			local SliderValue = Objects.new("Label")
 			SliderValue.Text = tostring(SliderDef)
 			SliderValue.TextColor3 = Theme.SliderAccent
 			SliderValue.TextTransparency = 1
+			SliderValue.TextStrokeTransparency = 0
 			SliderValue.TextSize = 14
 			SliderValue.Size = UDim2.fromScale(1,0) + UDim2.fromOffset(-5,25)
 			SliderValue.Position = UDim2.fromScale(0,0)
