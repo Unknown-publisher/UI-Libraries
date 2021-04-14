@@ -1,3 +1,4 @@
+print("V1")
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 
