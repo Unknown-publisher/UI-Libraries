@@ -1069,7 +1069,7 @@ function Material.Load(Config)
 		else
 			local Settings = {
 				TextSize = 12,
-				Font = Enum.Font.GothamBold,
+				Font = Enum.Font.FredokaOne,
 				Vector = Vector2.new(0,0)
 			}
 
