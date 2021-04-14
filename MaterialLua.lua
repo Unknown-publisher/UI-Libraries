@@ -706,7 +706,7 @@ function Material.Load(Config)
 	local Title = Config.Title or MarketplaceService:GetProductInfo(game.PlaceId).Name.. " - " ..game.PlaceId.. " --* HELLCOCK HUB *-- "
 	local SizeX = Config.SizeX or 300
 	local SizeY = Config.SizeY or 500
-	local Theme = Config.Theme or "Light"
+	local Theme = Config.Theme or "Dark"
 	local Overrides = Config.ColorOverrides or {}
 	local Open = true
 
@@ -745,6 +745,16 @@ function Material.Load(Config)
 	
 	local NewInstance = Objects.new("ScreenGui")
 	NewInstance.Name = Title
+
+    InputService.InputBegan:Connect(function(Input)
+        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
+            if NewInstance.Enabled == true then
+                NewInstance.Enabled = false
+            elseif NewInstance.Enabled == false then
+                NewInstance.Enabled = true
+            end
+        end
+    end)
 
     ProtectFunctions[GetExploit()](NewInstance);
 
@@ -791,8 +801,7 @@ function Material.Load(Config)
 	TitleText.Text = Title
 	TitleText.TextColor3 = Theme.TitleBarAccent
 	TitleText.TextTransparency = 1
-	TitleText.TextStrokeTransparency = 0
-	TitleText.Font = Enum.Font.FredokaOne
+	TitleText.Font = Enum.Font.GothamBold
 	TitleText.Parent = TitleBar
 
 	TitleText.MouseButton1Down:Connect(function()
@@ -921,7 +930,7 @@ function Material.Load(Config)
 		BannerOverlay.ZIndex = 75
 		BannerOverlay.Parent = MainFrame
 
-		local TextSize = TextService:GetTextSize(BannerText, 12, Enum.Font.FredokaOne, Vector2.new(0,0)).X
+		local TextSize = TextService:GetTextSize(BannerText, 12, Enum.Font.Gotham, Vector2.new(0,0)).X
 
 		local Lines = math.ceil((TextSize) / (MainFrame.AbsoluteSize.X - 10))
 
@@ -942,12 +951,11 @@ function Material.Load(Config)
 		BannerLabel.Text = BannerText
 		BannerLabel.TextColor3 = Theme.BannerAccent
 		BannerLabel.TextSize = 12
-		BannerLabel.Font = Enum.Font.FredokaOne
+		BannerLabel.Font = Enum.Font.Gotham
 		BannerLabel.Size = UDim2.fromScale(1,0) + UDim2.fromOffset(-5,(Lines*20)+5)
 		BannerLabel.TextWrapped = true
 		BannerLabel.Position = UDim2.fromOffset(5,0)
 		BannerLabel.TextTransparency = 1
-		BannerLabel.TextStrokeTransparency = 0
 		BannerLabel.ZIndex = 80
 		BannerLabel.Parent = Banner
 
@@ -1020,7 +1028,7 @@ function Material.Load(Config)
 			if Title then
 				local Settings = {
 					TextSize = 12,
-					Font = Enum.Font.FredokaOne,
+					Font = Enum.Font.GothamBold,
 					Vector = Vector2.new(0,0)
 				}
 
@@ -1035,7 +1043,6 @@ function Material.Load(Config)
 				Button.Size = UDim2.fromScale(0,1) + UDim2.fromOffset(TextSize+35)
 				Button.ZIndex = 200
 				Button.TextTransparency = 1
-				Button.TextStrokeTransparency = 0
 			end
 
 			local FetchURL = "rbxassetid://"..ImageID
