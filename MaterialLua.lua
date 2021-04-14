@@ -633,7 +633,7 @@ function TryAddMenu(Object, Menu, ReturnTable)
 				OptionValue.Size = UDim2.fromScale(1,1) - UDim2.fromOffset(5,0)
 				OptionValue.Text = Option
 				OptionValue.TextColor3 = ThisTheme.Button
-				OptionValue.Font = Enum.Font.Gotham
+				OptionValue.Font = Enum.Font.FredokaOne
 				OptionValue.TextSize = 12
 				OptionValue.ZIndex = 150
 				OptionValue.TextXAlignment = Enum.TextXAlignment.Right
@@ -681,7 +681,7 @@ function CreateNewButton(ButtonConfig, Parent)
 	local ButtonLabel = Objects.new("Label")
 	ButtonLabel.Text = ButtonText
 	ButtonLabel.TextColor3 = ThisTheme.ButtonAccent
-	ButtonLabel.Font = Enum.Font.GothamSemibold
+	ButtonLabel.Font = Enum.Font.FredokaOne
 	ButtonLabel.TextSize = 14
 	ButtonLabel.ClipsDescendants = true
 	ButtonLabel.TextTransparency = 1
@@ -931,7 +931,7 @@ function Material.Load(Config)
 		BannerOverlay.ZIndex = 75
 		BannerOverlay.Parent = MainFrame
 
-		local TextSize = TextService:GetTextSize(BannerText, 12, Enum.Font.Gotham, Vector2.new(0,0)).X
+		local TextSize = TextService:GetTextSize(BannerText, 12, Enum.Font.FredokaOne, Vector2.new(0,0)).X
 
 		local Lines = math.ceil((TextSize) / (MainFrame.AbsoluteSize.X - 10))
 
@@ -988,7 +988,7 @@ function Material.Load(Config)
 
 		table.foreach(BannerOptions, function(Option, Value)
 			if typeof(Value) == "function" then
-				local TextSize = TextService:GetTextSize(Option:upper(), 12, Enum.Font.GothamBold, Vector2.new(0,0)).X
+				local TextSize = TextService:GetTextSize(Option:upper(), 12, Enum.Font.FredokaOne, Vector2.new(0,0)).X
 
 				local OptionItem = Objects.new("SmoothButton")
 				OptionItem.ImageColor3 = Theme.BannerAccent
@@ -1002,7 +1002,7 @@ function Material.Load(Config)
 				OptionLabel.Text = Option:upper()
 				OptionLabel.TextSize = 12
 				OptionLabel.TextColor3 = Theme.BannerAccent
-				OptionLabel.Font = Enum.Font.GothamBold
+				OptionLabel.Font = Enum.Font.FredokaOne
 				OptionLabel.Size = UDim2.fromScale(1,1)
 				OptionLabel.Position = UDim2.fromScale(0,0)
 				OptionLabel.TextXAlignment = Enum.TextXAlignment.Center
@@ -1029,7 +1029,7 @@ function Material.Load(Config)
 			if Title then
 				local Settings = {
 					TextSize = 12,
-					Font = Enum.Font.GothamBold,
+					Font = Enum.Font.FredokaOne,
 					Vector = Vector2.new(0,0)
 				}
 
@@ -1172,7 +1172,7 @@ function Material.Load(Config)
 
 			local DropdownTitle = Objects.new("Button")
 			DropdownTitle.Name = "Title"
-			DropdownTitle.Font = Settings.Font
+			DropdownTitle.Font = Enum.Font.FredokaOne
 			DropdownTitle.Text = DropdownText
 			DropdownTitle.TextColor3 = Theme.DropdownAccent
 			DropdownTitle.TextTransparency = 1
@@ -1380,7 +1380,7 @@ function Material.Load(Config)
 					ChipLabel.Size = BuildTable[Key] and (UDim2.fromScale(1,1) - UDim2.fromOffset(30)) or (UDim2.fromScale(1,1) - UDim2.fromOffset(5))
 					ChipLabel.Position = BuildTable[Key] and UDim2.fromOffset(30) or UDim2.fromOffset(5)
 					ChipLabel.Text = Key
-					ChipLabel.Font = Settings.Font
+					ChipLabel.Font = Enum.Font.FredokaOne
 					ChipLabel.TextSize = 12
 					ChipLabel.TextColor3 = BuildTable[Key] and Theme.ChipSetAccent or Theme.ChipSet
 					ChipLabel.TextTransparency = 1
@@ -1489,7 +1489,7 @@ function Material.Load(Config)
 						ChipLabel.Size = BuildTable[Key] and (UDim2.fromScale(1,1) - UDim2.fromOffset(30)) or (UDim2.fromScale(1,1) - UDim2.fromOffset(5))
 						ChipLabel.Position = BuildTable[Key] and UDim2.fromOffset(30) or UDim2.fromOffset(5)
 						ChipLabel.Text = Key
-						ChipLabel.Font = Settings.Font
+						ChipLabel.Font = Enum.Font.FredokaOne
 						ChipLabel.TextSize = 12
 						ChipLabel.TextColor3 = BuildTable[Key] and Theme.ChipSetAccent or Theme.ChipSet
 						ChipLabel.TextTransparency = 1
@@ -1625,7 +1625,7 @@ function Material.Load(Config)
 					DataLabel.Size = (UDim2.fromScale(1,1) - UDim2.fromOffset(30))
 					DataLabel.Position = UDim2.fromOffset(30) or UDim2.fromOffset(5)
 					DataLabel.Text = Key
-					DataLabel.Font = Enum.Font.Gotham
+					DataLabel.Font = Enum.Font.FredokaOne
 					DataLabel.TextSize = 14
 					DataLabel.TextColor3 = Theme.DataTable
 					DataLabel.TextTransparency = 1
@@ -1740,7 +1740,7 @@ function Material.Load(Config)
 						DataLabel.Size = (UDim2.fromScale(1,1) - UDim2.fromOffset(30))
 						DataLabel.Position = UDim2.fromOffset(30) or UDim2.fromOffset(5)
 						DataLabel.Text = Key
-						DataLabel.Font = Enum.Font.Gotham
+						DataLabel.Font = Enum.Font.FredokaOne
 						DataLabel.TextSize = 14
 						DataLabel.TextColor3 = Theme.DataTable
 						DataLabel.TextTransparency = 1
@@ -1821,7 +1821,7 @@ function Material.Load(Config)
 
 			local ColorLabel = Objects.new("Label")
 			ColorLabel.Name = "Title"
-			ColorLabel.Font = Enum.Font.GothamSemibold
+			ColorLabel.Font = Enum.Font.FredokaOne
 			ColorLabel.TextColor3 = Theme.ColorPickerAccent
 			ColorLabel.TextSize = 14
 			ColorLabel.Text = ColorPickerText
@@ -1869,7 +1869,7 @@ function Material.Load(Config)
 			HueLabel.Text = "H"
 			HueLabel.TextColor3 = Theme.ColorPickerAccent
 			HueLabel.TextSize = 12
-			HueLabel.Font = Enum.Font.GothamBold
+			HueLabel.Font = Enum.Font.FredokaOne
 			HueLabel.TextTransparency = 1
 			HueLabel.Parent = Hue
 
@@ -2118,7 +2118,7 @@ function Material.Load(Config)
 			DotShadow.Parent = Dot
 
 			local ToggleLabel = Objects.new("Label")
-			ToggleLabel.Font = Enum.Font.GothamSemibold
+			ToggleLabel.Font = Enum.Font.FredokaOne
 			ToggleLabel.TextSize = 14
 			ToggleLabel.Text = ToggleText
 			ToggleLabel.TextColor3 = Theme.Toggle
@@ -2205,7 +2205,7 @@ function Material.Load(Config)
 			TextInput.TextInputType = Enum.TextInputType[TextFieldInputType]
 			TextInput.TextColor3 = Theme.TextFieldAccent
 			TextInput.Text = ""
-			TextInput.Font = Enum.Font.GothamSemibold
+			TextInput.Font = Enum.Font.FredokaOne
 			TextInput.TextSize = 14
 			TextInput.TextTransparency = 1
 			TextInput.Parent = TextField
@@ -2263,7 +2263,7 @@ function Material.Load(Config)
 			LabelContent.TextColor3 = Theme.ChipSet
 			LabelContent.Text = LabelText:upper()
 			LabelContent.TextSize = 12
-			LabelContent.Font = Enum.Font.GothamSemibold
+			LabelContent.Font = Enum.Font.FredokaOne
 			LabelContent.Size = UDim2.fromScale(1,1) + UDim2.fromOffset(-5,0)
 			LabelContent.Position = UDim2.fromOffset(5,0)
 			LabelContent.Parent = LabelContainer
@@ -2308,7 +2308,7 @@ function Material.Load(Config)
 			SliderTitle.TextColor3 = Theme.SliderAccent
 			SliderTitle.Text = SliderText
 			SliderTitle.TextSize = 14
-			SliderTitle.Font = Enum.Font.GothamSemibold
+			SliderTitle.Font = Enum.Font.FredokaOne
 			SliderTitle.Size = UDim2.fromScale(1,0) + UDim2.fromOffset(-5,25)
 			SliderTitle.TextTransparency = 1
 			SliderTitle.Parent = Slider
@@ -2321,7 +2321,7 @@ function Material.Load(Config)
 			SliderValue.Size = UDim2.fromScale(1,0) + UDim2.fromOffset(-5,25)
 			SliderValue.Position = UDim2.fromScale(0,0)
 			SliderValue.TextXAlignment = Enum.TextXAlignment.Right
-			SliderValue.Font = Enum.Font.GothamSemibold
+			SliderValue.Font = Enum.Font.FredokaOne
 			SliderValue.Parent = Slider
 
 			local SliderTracker = Objects.new("Frame")
