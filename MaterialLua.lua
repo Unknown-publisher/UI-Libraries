@@ -7,6 +7,7 @@ local RunService = game:GetService("RunService")
 local InputService = game:GetService("UserInputService")
 local CoreGuiService = game:GetService("CoreGui")
 local ContentService = game:GetService("ContentProvider")
+local MarketplaceService = game:GetService("MarketplaceService")
 
 local Themes = {
 	Light = {
@@ -702,7 +703,7 @@ end
 
 function Material.Load(Config)
 	local Style = (Config.Style and math.clamp(Config.Style, 1, 3)) or 1
-	local Title = Config.Title or MPS:GetProductInfo(game.PlaceId).Name.. " - " ..game.PlaceId.. " --* HELLCOCK HUB *-- "
+	local Title = Config.Title or MarketplaceService:GetProductInfo(game.PlaceId).Name.. " - " ..game.PlaceId.. " --* HELLCOCK HUB *-- "
 	local SizeX = Config.SizeX or 300
 	local SizeY = Config.SizeY or 500
 	local Theme = Config.Theme or "Light"
