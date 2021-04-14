@@ -760,24 +760,6 @@ function Material.Load(Config)
 
 	TweenService:Create(MainFrame, TweenInfo.new(1), {Size = UDim2.fromOffset(SizeX,SizeY)}):Play()
 
-	local time = 1
-	local FadeIn = TweenService:Create(MainFrame, TweenInfo.new(time), {Transparency = 1})
-	local FadeOut = TweenService:Create(MainFrame, TweenInfo.new(time), {Transparency = 0})
-	
-    InputService.InputBegan:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
-            if NewInstance.Enabled == true then
-				FadeIn:Play()
-    			FadeIn.Completed:Wait()
-                NewInstance.Enabled = false
-            elseif NewInstance.Enabled == false then
-				FadeOut:Play()
-    			FadeOut.Completed:Wait()
-                NewInstance.Enabled = true
-            end
-        end
-    end)
-
 	wait(1)
 
 	local MainShadow = Objects.new("Shadow")
@@ -873,6 +855,37 @@ function Material.Load(Config)
 	TweenService:Create(MinimiseButton, TweenInfo.new(1), {ImageTransparency = 0}):Play()
 	TweenService:Create(MinimiseShadow, TweenInfo.new(1), {ImageTransparency = 0}):Play()
 	TweenService:Create(Content, TweenInfo.new(1), {ImageTransparency = 0.8}):Play()
+
+	local time = 1
+	local FadeIn = TweenService:Create(TitleBar, TweenInfo.new(time), {ImageTransparency = 1})
+	local FadeIn = TweenService:Create(ExtraBar, TweenInfo.new(time), {BackgroundTransparency = 1})
+	local FadeIn = TweenService:Create(TitleShadow, TweenInfo.new(time), {ImageTransparency = 1})
+	local FadeIn = TweenService:Create(TitleText, TweenInfo.new(time), {TextTransparency = 1})
+	local FadeIn = TweenService:Create(MinimiseButton, TweenInfo.new(time), {ImageTransparency = 1})
+	local FadeIn = TweenService:Create(MinimiseShadow, TweenInfo.new(time), {ImageTransparency = 1})
+	local FadeIn = TweenService:Create(Content, TweenInfo.new(time), {ImageTransparency = 1})
+	--
+	local FadeOut = TweenService:Create(TitleBar, TweenInfo.new(time), {ImageTransparency = 0})
+	local FadeOut = TweenService:Create(ExtraBar, TweenInfo.new(time), {BackgroundTransparency = 0})
+	local FadeOut = TweenService:Create(TitleShadow, TweenInfo.new(time), {ImageTransparency = 0})
+	local FadeOut = TweenService:Create(TitleText, TweenInfo.new(time), {TextTransparency = 0})
+	local FadeOut = TweenService:Create(MinimiseButton, TweenInfo.new(time), {ImageTransparency = 0})
+	local FadeOut = TweenService:Create(MinimiseShadow, TweenInfo.new(time), {ImageTransparency = 0})
+	local FadeOut = TweenService:Create(Content, TweenInfo.new(time), {ImageTransparency = 0})
+		
+    InputService.InputBegan:Connect(function(Input)
+        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
+            if NewInstance.Enabled == true then
+				FadeIn:Play()
+    			FadeIn.Completed:Wait()
+                NewInstance.Enabled = false
+            elseif NewInstance.Enabled == false then
+				FadeOut:Play()
+    			FadeOut.Completed:Wait()
+                NewInstance.Enabled = true
+            end
+        end
+    end)
 
 	wait(1)
 
