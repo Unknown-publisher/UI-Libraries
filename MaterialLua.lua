@@ -791,7 +791,8 @@ function Material.Load(Config)
 	TitleText.Text = Title
 	TitleText.TextColor3 = Theme.TitleBarAccent
 	TitleText.TextTransparency = 1
-	TitleText.Font = Enum.Font.GothamBold
+	TitleText.TextStrokeTransparency = 0
+	TitleText.Font = Enum.Font.FredokaOne
 	TitleText.Parent = TitleBar
 
 	TitleText.MouseButton1Down:Connect(function()
