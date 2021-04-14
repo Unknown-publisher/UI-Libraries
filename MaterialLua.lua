@@ -857,10 +857,9 @@ function Material.Load(Config)
 	TweenService:Create(Content, TweenInfo.new(1), {ImageTransparency = 0.8}):Play()
 
 	local time = 1
-	local FadeIn = TweenService:Create(Content:GetChildren, TweenInfo.new(time), {ImageTransparency = 1})
-	
+	local FadeIn = TweenService:Create(Content:GetChildren(), TweenInfo.new(time), {ImageTransparency = 1})
 	--
-	local FadeOut = TweenService:Create(Content:GetChildren, TweenInfo.new(time), {ImageTransparency = 0})
+	local FadeOut = TweenService:Create(Content:GetChildren(), TweenInfo.new(time), {ImageTransparency = 0})
 		
     InputService.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
@@ -871,7 +870,7 @@ function Material.Load(Config)
             elseif NewInstance.Enabled == false then
 				FadeOut:Play()
     			FadeOut.Completed:Wait()
-                NewInstance.Enabled = true
+                NewInstance.	Enabled = true
             end
         end
     end)
