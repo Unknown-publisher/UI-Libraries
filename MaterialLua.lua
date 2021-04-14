@@ -745,24 +745,6 @@ function Material.Load(Config)
 	local NewInstance = Objects.new("ScreenGui")
 	NewInstance.Name = Title
 
-	local time = 1
-	local FadeIn = TweenService:Create(NewInstance:FindFirstChild(), TweenInfo.new(time), {Transparency = 1})
-	local FadeOut = TweenService:Create(NewInstance:FindFirstChild(), TweenInfo.new(time), {Transparency = 0})
-	
-    InputService.InputBegan:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
-            if NewInstance.Enabled == true then
-				FadeIn:Play()
-    			FadeIn.Completed:Wait()
-                NewInstance.Enabled = false
-            elseif NewInstance.Enabled == false then
-				FadeOut:Play()
-    			FadeOut.Completed:Wait()
-                NewInstance.Enabled = true
-            end
-        end
-    end)
-
     ProtectFunctions[GetExploit()](NewInstance);
 
     getgenv().OldInstance = NewInstance;
@@ -777,6 +759,24 @@ function Material.Load(Config)
 	MainFrame.Parent = NewInstance
 
 	TweenService:Create(MainFrame, TweenInfo.new(1), {Size = UDim2.fromOffset(SizeX,SizeY)}):Play()
+
+	local time = 1
+	local FadeIn = TweenService:Create(MainFrame, TweenInfo.new(time), {Transparency = 1})
+	local FadeOut = TweenService:Create(MainFrame, TweenInfo.new(time), {Transparency = 0})
+	
+    InputService.InputBegan:Connect(function(Input)
+        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
+            if NewInstance.Enabled == true then
+				FadeIn:Play()
+    			FadeIn.Completed:Wait()
+                NewInstance.Enabled = false
+            elseif NewInstance.Enabled == false then
+				FadeOut:Play()
+    			FadeOut.Completed:Wait()
+                NewInstance.Enabled = true
+            end
+        end
+    end)
 
 	wait(1)
 
