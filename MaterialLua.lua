@@ -1,4 +1,3 @@
-print("2")
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 
@@ -703,7 +702,7 @@ end
 
 function Material.Load(Config)
 	local Style = (Config.Style and math.clamp(Config.Style, 1, 3)) or 1
-	local Title = Config.Title or "MaterialLua"
+	local Title = Config.Title or MPS:GetProductInfo(game.PlaceId).Name.. " - " ..game.PlaceId.. " --* HELLCOCK HUB *-- "
 	local SizeX = Config.SizeX or 300
 	local SizeY = Config.SizeY or 500
 	local Theme = Config.Theme or "Light"
@@ -751,28 +750,6 @@ function Material.Load(Config)
     getgenv().OldInstance = NewInstance;
 
 	MainGUI = NewInstance
-
-	local time = 1
-	
-	for i, v in pairs(NewInstance:GetChildren()) do
-	end
-	local FadeIn = TweenService:Create(v, TweenInfo.new(time), {ImageTransparency = 1})
-	--
-	local FadeOut = TweenService:Create(v, TweenInfo.new(time), {ImageTransparency = 0})
-	
-    InputService.InputBegan:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
-            if NewInstance.Enabled == true then
-				FadeIn:Play()
-    			FadeIn.Completed:Wait()
-                NewInstance.Enabled = false
-            elseif NewInstance.Enabled == false then
-				FadeOut:Play()
-    			FadeOut.Completed:Wait()
-                NewInstance.Enabled = true
-            end
-        end
-    end)
 
 	local MainFrame = Objects.new("Round")
 	MainFrame.Name = "MainFrame"
