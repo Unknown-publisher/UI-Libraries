@@ -782,7 +782,6 @@ function Material.Load(Config)
 	TitleBar.Size = UDim2.fromScale(1,0) + UDim2.fromOffset(0,30)
 	TitleBar.ImageColor3 = Theme.TitleBar
 	TitleBar.ImageTransparency = 1
-	TitleBar.TextStrokeTransparency = 0
 	TitleBar.Parent = MainFrame
 
 	local ExtraBar = Objects.new("Frame")
@@ -802,7 +801,8 @@ function Material.Load(Config)
 	TitleText.Text = Title
 	TitleText.TextColor3 = Theme.TitleBarAccent
 	TitleText.TextTransparency = 1
-	TitleText.Font = Enum.Font.GothamBold
+	TitleText.TextStrokeTransparency = 0
+	TitleText.Font = Enum.Font.FredokaOne
 	TitleText.Parent = TitleBar
 
 	TitleText.MouseButton1Down:Connect(function()
