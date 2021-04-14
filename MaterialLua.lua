@@ -2437,4 +2437,3 @@ function Material.Load(Config)
 end
 
 return Material
-print("lol")
