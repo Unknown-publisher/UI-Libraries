@@ -633,7 +633,8 @@ function TryAddMenu(Object, Menu, ReturnTable)
 				OptionValue.Size = UDim2.fromScale(1,1) - UDim2.fromOffset(5,0)
 				OptionValue.Text = Option
 				OptionValue.TextColor3 = ThisTheme.Button
-				OptionValue.Font = Enum.Font.Gotham
+				OptionValue.Font = Enum.Font.FredokaOne
+				OptionValue.TextStrokeTransparency = 0
 				OptionValue.TextSize = 12
 				OptionValue.ZIndex = 150
 				OptionValue.TextXAlignment = Enum.TextXAlignment.Right
@@ -956,7 +957,6 @@ function Material.Load(Config)
 		BannerLabel.TextWrapped = true
 		BannerLabel.Position = UDim2.fromOffset(5,0)
 		BannerLabel.TextTransparency = 1
-		BannerLabel.TextStrokeTransparency = 0
 		BannerLabel.ZIndex = 80
 		BannerLabel.Parent = Banner
 
