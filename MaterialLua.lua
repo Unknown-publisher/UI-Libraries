@@ -1020,7 +1020,7 @@ function Material.Load(Config)
 			if Title then
 				local Settings = {
 					TextSize = 12,
-					Font = Enum.Font.GothamBold,
+					Font = Enum.Font.FredokaOne,
 					Vector = Vector2.new(0,0)
 				}
 
@@ -1035,6 +1035,7 @@ function Material.Load(Config)
 				Button.Size = UDim2.fromScale(0,1) + UDim2.fromOffset(TextSize+35)
 				Button.ZIndex = 200
 				Button.TextTransparency = 1
+				Button.TextStrokeTransparency = 0
 			end
 
 			local FetchURL = "rbxassetid://"..ImageID
@@ -2436,3 +2437,4 @@ function Material.Load(Config)
 end
 
 return Material
+print("lol")
