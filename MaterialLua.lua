@@ -633,8 +633,7 @@ function TryAddMenu(Object, Menu, ReturnTable)
 				OptionValue.Size = UDim2.fromScale(1,1) - UDim2.fromOffset(5,0)
 				OptionValue.Text = Option
 				OptionValue.TextColor3 = ThisTheme.Button
-				OptionValue.Font = Enum.Font.FredokaOne
-				OptionValue.TextStrokeTransparency = 0
+				OptionValue.Font = Enum.Font.Gotham
 				OptionValue.TextSize = 12
 				OptionValue.ZIndex = 150
 				OptionValue.TextXAlignment = Enum.TextXAlignment.Right
@@ -783,6 +782,7 @@ function Material.Load(Config)
 	TitleBar.Size = UDim2.fromScale(1,0) + UDim2.fromOffset(0,30)
 	TitleBar.ImageColor3 = Theme.TitleBar
 	TitleBar.ImageTransparency = 1
+	TitleBar.TextStrokeTransparency = 0
 	TitleBar.Parent = MainFrame
 
 	local ExtraBar = Objects.new("Frame")
