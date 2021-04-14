@@ -746,8 +746,8 @@ function Material.Load(Config)
 	NewInstance.Name = Title
 
 	local time = 1
-	local FadeIn = TweenService:Create(script.Parent, TweenInfo.new(time), {Transparency = 1})
-	local FadeOut = TweenService:Create(script.Parent, TweenInfo.new(time), {Transparency = 0})
+	local FadeIn = TweenService:Create(NewInstance:FindFirstChild(), TweenInfo.new(time), {Transparency = 1})
+	local FadeOut = TweenService:Create(NewInstance:FindFirstChild(), TweenInfo.new(time), {Transparency = 0})
 	
     InputService.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
