@@ -745,13 +745,19 @@ function Material.Load(Config)
 	local NewInstance = Objects.new("ScreenGui")
 	NewInstance.Name = Title
 
+	local time = 1
+	local FadeIn = TweenService:Create(script.Parent, TweenInfo.new(time), {Transparency = 1})
+	local FadeOut = TweenService:Create(script.Parent, TweenInfo.new(time), {Transparency = 0})
+	
     InputService.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
             if NewInstance.Enabled == true then
-                print("Turned off")
+				FadeIn:Play()
+    			FadeIn.Completed:Wait()
                 NewInstance.Enabled = false
             elseif NewInstance.Enabled == false then
-                print("Turned on")
+				FadeOut:Play()
+    			FadeOut.Completed:Wait()
                 NewInstance.Enabled = true
             end
         end
