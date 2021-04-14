@@ -685,7 +685,6 @@ function CreateNewButton(ButtonConfig, Parent)
 	ButtonLabel.TextSize = 14
 	ButtonLabel.ClipsDescendants = true
 	ButtonLabel.TextTransparency = 1
-	ButtonLabel.TextStrokeTransparency = 0
 	ButtonLabel.Parent = Button
 
 	TweenService:Create(Button, TweenInfo.new(0.5), {ImageTransparency = 0}):Play()
@@ -957,6 +956,7 @@ function Material.Load(Config)
 		BannerLabel.TextWrapped = true
 		BannerLabel.Position = UDim2.fromOffset(5,0)
 		BannerLabel.TextTransparency = 1
+		BannerLabel.TextStrokeTransparency = 0
 		BannerLabel.ZIndex = 80
 		BannerLabel.Parent = Banner
 
