@@ -751,6 +751,26 @@ function Material.Load(Config)
 
 	MainGUI = NewInstance
 
+	local time = 1
+	local frames = NewInstance:GetChildren
+	local FadeIn = TweenService:Create(frames, TweenInfo.new(time), {ImageTransparency = 1})
+	--
+	local FadeOut = TweenService:Create(frames, TweenInfo.new(time), {ImageTransparency = 0})
+		
+    InputService.InputBegan:Connect(function(Input)
+        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
+            if NewInstance.Enabled == true then
+				FadeIn:Play()
+    			FadeIn.Completed:Wait()
+                NewInstance.Enabled = false
+            elseif NewInstance.Enabled == false then
+				FadeOut:Play()
+    			FadeOut.Completed:Wait()
+                NewInstance.	Enabled = true
+            end
+        end
+    end)
+
 	local MainFrame = Objects.new("Round")
 	MainFrame.Name = "MainFrame"
 	MainFrame.Size = UDim2.fromOffset(0,SizeY)
@@ -855,25 +875,6 @@ function Material.Load(Config)
 	TweenService:Create(MinimiseButton, TweenInfo.new(1), {ImageTransparency = 0}):Play()
 	TweenService:Create(MinimiseShadow, TweenInfo.new(1), {ImageTransparency = 0}):Play()
 	TweenService:Create(Content, TweenInfo.new(1), {ImageTransparency = 0.8}):Play()
-
-	local time = 1
-	local FadeIn = TweenService:Create(Content:GetChildren(), TweenInfo.new(time), {ImageTransparency = 1})
-	--
-	local FadeOut = TweenService:Create(Content:GetChildren(), TweenInfo.new(time), {ImageTransparency = 0})
-		
-    InputService.InputBegan:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode == Enum.KeyCode.Insert then
-            if NewInstance.Enabled == true then
-				FadeIn:Play()
-    			FadeIn.Completed:Wait()
-                NewInstance.Enabled = false
-            elseif NewInstance.Enabled == false then
-				FadeOut:Play()
-    			FadeOut.Completed:Wait()
-                NewInstance.	Enabled = true
-            end
-        end
-    end)
 
 	wait(1)
 
