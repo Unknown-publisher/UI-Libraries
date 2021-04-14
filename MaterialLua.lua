@@ -685,6 +685,7 @@ function CreateNewButton(ButtonConfig, Parent)
 	ButtonLabel.TextSize = 14
 	ButtonLabel.ClipsDescendants = true
 	ButtonLabel.TextTransparency = 1
+	ButtonLabel.TextStrokeTransparency = 0
 	ButtonLabel.Parent = Button
 
 	TweenService:Create(Button, TweenInfo.new(0.5), {ImageTransparency = 0}):Play()
