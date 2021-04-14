@@ -1,4 +1,4 @@
-print("V1")
+print("2")
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 
@@ -769,7 +769,7 @@ function Material.Load(Config)
             elseif NewInstance.Enabled == false then
 				FadeOut:Play()
     			FadeOut.Completed:Wait()
-                NewInstance.	Enabled = true
+                NewInstance.Enabled = true
             end
         end
     end)
