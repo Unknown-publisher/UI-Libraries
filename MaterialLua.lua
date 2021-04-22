@@ -339,7 +339,7 @@ rconsoleprint("@@GREEN@@")
 rconsoleprint(Title)
 ConsoleCMDS("ConsoleName(<string> title)")
 ConsoleCMDS("ConsoleMessage(<string> color, <string> message)")
-ConsoleCMDS("SystemMessage(<string> message, <Font> fonttype, <fromRGB> color)\n")
+ConsoleCMDS("Message(<string> message, <Font> fonttype, <fromRGB> color)\n")
 
 --// Code
 
