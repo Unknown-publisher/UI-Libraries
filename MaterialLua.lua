@@ -283,6 +283,70 @@ local Properties = {
 		AutoButtonColor = false
 	}
 }
+--// START
+--// Locals
+
+local Title = [[
+
+    :::    ::: :::::::::: :::        :::        ::::::::   ::::::::   ::::::::  :::    ::: 
+    :+:    :+: :+:        :+:        :+:       :+:    :+: :+:    :+: :+:    :+: :+:   :+:  
+    +:+    +:+ +:+        +:+        +:+       +:+        +:+    +:+ +:+        +:+  +:+   
+    +#++:++#++ +#++:++#   +#+        +#+       +#+        +#+    +:+ +#+        +#++:++    
+    +#+    +#+ +#+        +#+        +#+       +#+        +#+    +#+ +#+        +#+  +#+   
+    #+#    #+# #+#        #+#        #+#       #+#    #+# #+#    #+# #+#    #+# #+#   #+#  
+    ###    ### ########## ########## ########## ########   ########   ########  ###    ### 
+    
+]]
+
+--// Functions
+
+local function Rainbow()
+    local r = (math.sin(workspace.DistributedGameTime/2)/2)+0.5
+    local g = (math.sin(workspace.DistributedGameTime)/2)+0.5
+    local b = (math.sin(workspace.DistributedGameTime*1.5)/2)+0.5
+    local color = Color3.new(r, g, b)
+    return color
+end
+
+local function Message(text) -- In-game Message
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+        Text = "[SERVER]: "..text,
+        TextSize = 16,
+        Font = Enum.Font.FredokaOne,
+        Color = Color3.new(255, 0, 0)
+        
+    })
+end
+
+local function ConsoleMessage(color, text) -- Console Message
+    rconsoleprint("@@"..tostring(color).."@@")
+    rconsoleprint("[SERVER]: "..text.. '\n')
+end
+
+local function ConsoleName(text)
+    rconsolename(text)
+end
+
+local function ConsoleCMDS(text)
+    rconsoleinfo(text)
+end
+
+--// Defaults
+
+rconsoleclear()
+ConsoleName("HELLCOCK-CONSOLE")
+rconsoleprint("@@GREEN@@")
+rconsoleprint(Title)
+ConsoleCMDS("ConsoleName(<string> title)")
+ConsoleCMDS("ConsoleMessage(<string> color, <string> message)")
+ConsoleCMDS("SystemMessage(<string> message, <Font> fonttype, <fromRGB> color)\n")
+
+--// Code
+
+ConsoleMessage("RED","Welcome to HELLC0CK-HUB, " ..tostring(game:GetService("Players").LocalPlayer))
+ConsoleMessage("RED",MarketplaceService:GetProductInfo(game.PlaceId).Name.." -- "..game.PlaceId)
+
+--// END
 
 function FindType(String)
 	for _, Type in next, Types do
