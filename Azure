@@ -119,8 +119,8 @@ function library:CreateTab(text, desc, mode)
     local TextBounds =
         game:GetService("TextService"):GetTextSize(
         desc,
-        14,
-        Enum.Font.SourceSansLight,
+        16,
+        Enum.Font.Oswald,
         Vector2.new(math.huge, math.huge)
     )
 
