@@ -1674,3 +1674,51 @@ inputService.InputChanged:connect(function(input)
 end)
 
 return library
+
+--[[
+-- UI Library
+local library = loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/Unknown-publisher/UI-Libraries/main/uwuware.lua'))()
+
+-- Main
+local window = library:CreateWindow("window")
+
+-- Label
+window:AddLabel({text = "Made by egg salad"})
+
+-- Folder
+local folder = window:AddFolder("folder")
+
+-- Toggle
+local toggle = folder:AddToggle({text = 'Toggle', flag = 'toggle', callback = warn})
+
+-- Slider
+local slider = folder:AddSlider({text = 'Slider', flag = 'slider', min = 0, max = 7})
+
+-- Float Slider
+local slider2 = folder:AddSlider({text = 'Float slider', flag = 'fslider', min = 0, max = 7, float = 0.01})
+
+-- Negative Slider
+local slider3 = folder:AddSlider({text = 'Negative slider', flag = 'slider', min = -7, max = 7})
+
+-- Button
+local button = folder:AddButton({text = 'Button', callback = function()
+   print("hello")
+end})
+
+-- Box
+local box = folder:AddBox({text = 'Text Box'})
+
+-- Color Picker
+local color = folder:AddColor({text = 'Color Picker', flag = 'colorpicker'})
+
+-- Dropdown
+local list = folder:AddList({text='Dropdown',flag='list',values={"1","2","3"}})
+
+-- Keybind
+local key = folder:AddBind({text='Keybind',flag='bind1',callback=function()
+   print('pressed')
+end})
+
+-- Init
+library:Init()
+--]]
