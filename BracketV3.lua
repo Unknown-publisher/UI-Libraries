@@ -53,6 +53,7 @@ function Library:CreateWindow(Config, Parent)
 	Screen.Name =  HttpService:GenerateGUID(false)
 	Screen.Parent = Parent
 	Topbar.WindowName.Text = Config.WindowName
+	Topbar.LibraryName.Text = Config.LibraryName
 
 	MakeDraggable(Topbar,Main)
 	local function CloseAll()
