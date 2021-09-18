@@ -746,7 +746,7 @@ function Library:CreateWindow(Config, Parent)
 				
 				if ColorDefault == nil then
 				else
-					ColorpickerInit:UpdateColor(ColorDefault)
+					Callback(ColorDefault)
 				end
 				
 				Pallete.Input.InputBox.FocusLost:Connect(function(Enter)
