@@ -644,7 +644,7 @@ function Library:CreateWindow(Config, Parent)
 				return DropdownInit
 			end
 			function SectionInit:CreateColorpicker(Name, Default, Callback)
-				local Color = Default or Color3.fromRGB(0, 170, 255)
+				local ColorDefault = Default or Color3.fromRGB(0, 170, 255)
 				local ColorpickerInit = {}
 				local Colorpicker = Folder.Colorpicker:Clone()
 				local Pallete = Folder.Pallete:Clone()
@@ -743,7 +743,15 @@ function Library:CreateWindow(Config, Parent)
 					}
 					Callback(Color)
 				end
-
+				
+				if ColorDefault == nil then
+					function ColorpickerInit:UpdateColor(Color)
+						UpdateColor(Color)
+					end
+				else
+					UpdateColor(ColorDefault)
+				end
+				
 				Pallete.Input.InputBox.FocusLost:Connect(function(Enter)
 					if Enter then
 						local ColorString = string.split(string.gsub(Pallete.Input.InputBox.Text," ", ""), ",")
