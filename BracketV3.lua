@@ -745,9 +745,6 @@ function Library:CreateWindow(Config, Parent)
 				end
 				
 				if ColorDefault == nil then
-					function ColorpickerInit:UpdateColor(Color)
-						UpdateColor(Color)
-					end
 				else
 					UpdateColor(ColorDefault)
 				end
