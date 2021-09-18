@@ -643,7 +643,8 @@ function Library:CreateWindow(Config, Parent)
 				end
 				return DropdownInit
 			end
-			function SectionInit:CreateColorpicker(Name,Callback)
+			function SectionInit:CreateColorpicker(Name, Default, Callback)
+				local Color = Default or Color3.fromRGB(0, 170, 255)
 				local ColorpickerInit = {}
 				local Colorpicker = Folder.Colorpicker:Clone()
 				local Pallete = Folder.Pallete:Clone()
